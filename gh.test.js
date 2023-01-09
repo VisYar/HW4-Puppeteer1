@@ -35,3 +35,26 @@ describe("Github page tests", () => {
     expect(actual).toContain("Get started with Team")
   }, 1000);
 });
+
+describe("Added three new tests - headers of other application page", () => {
+	test("Click pricing", async () => {
+		await page.goto("https://github.com/pricing");
+		await page.waitForSelector("h1");
+    const title = await page.title();
+    expect(title).toContain("Pricing · Plans for every developer · GitHub");
+	}, 2000);
+
+	test("Click sponsors", async () => {
+		await page.goto("https://github.com/sponsors");
+		await page.waitForSelector("h1");
+    const title = await page.title();
+    expect(title).toContain("GitHub Sponsors · GitHub");
+	}, 1000);
+
+	test("Click enterprise", async () => {
+		await page.goto("https://github.com/enterprise");
+		await page.waitForSelector("h1");
+    const title = await page.title();
+    expect(title).toContain("Enterprise · A smarter way to work together · GitHub");
+	}, 1000);
+});
