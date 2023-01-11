@@ -9,9 +9,9 @@ afterEach(() => {
 });
 
 describe("Github page tests", () => {
-	beforeEach(async () => {
-		await page.goto("https://github.com/team");
-	});
+  beforeEach(async () => {
+    await page.goto("https://github.com/team");
+  });
 
   test("The h1 header content'", async () => {
     const firstLink = await page.$("header div div a");
@@ -37,24 +37,24 @@ describe("Github page tests", () => {
 });
 
 describe("Added three new tests - headers of other application page", () => {
-	test("Click pricing", async () => {
-		await page.goto("https://github.com/pricing");
-		await page.waitForSelector("h1");
-		const title = await page.title();
-		expect(title).toContain("Pricing · Plans for every developer · GitHub");
-	}, 60000);
+  test("Click pricing", async () => {
+    await page.goto("https://github.com/pricing");
+    await page.waitForSelector("h1");
+    const title = await page.title();
+    expect(title).toContain("Pricing · Plans for every developer · GitHub");
+  }, 60000);
 
-	test("Click sponsors", async () => {
-		await page.goto("https://github.com/sponsors");
-		await page.waitForSelector("h1");
-		const title = await page.title();
-		expect(title).toContain("GitHub Sponsors · GitHub");
-	}, 60000);
+  test("Click sponsors", async () => {
+    await page.goto("https://github.com/sponsors");
+    await page.waitForSelector("h1");
+    const title = await page.title();
+    expect(title).toContain("GitHub Sponsors · GitHub");
+  }, 60000);
 
-	test("Click enterprise", async () => {
-		await page.goto("https://github.com/enterprise");
-		await page.waitForSelector("h1");
-		const title = await page.title();
-		expect(title).toContain("Enterprise · A smarter way to work together · GitHub");
-	}, 60000);
+  test("Click enterprise", async () => {
+    await page.goto("https://github.com/enterprise");
+    await page.waitForSelector("h1");
+    const title = await page.title();
+    expect(title).toContain("Enterprise · A smarter way to work together · GitHub");
+  }, 60000);
 });
